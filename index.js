@@ -7,9 +7,12 @@ import domains from './domains.json' with {type: 'json'}
 
 const schema = {
   type: 'object',
-  required: ['EMAIL_FROM', 'EMAIL_FROM_PASS'],
+  required: ['HMACKEY','EMAIL_FROM', 'EMAIL_FROM_PASS'],
   properties: {
     PORT: {
+      type: 'string'
+    },
+    HMACKEY: {
       type: 'string'
     },
     EMAIL_FROM: {
