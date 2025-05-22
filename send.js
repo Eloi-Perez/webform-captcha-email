@@ -135,15 +135,15 @@ async function routes(fastify, options) {
     const emailTransporter = await transporter()
     if (!emailTransporter) return reply.code(500).send({ error: 'emailTransporter error' })
 
-    await emailTransporter.sendMail(mailData, function (err, info) {
-      if (err) {
-        console.log(err)
-        return reply.code(500).send({ error: err })
-      } else {
-        console.log(info)
+    // await emailTransporter.sendMail(mailData, function (err, info) {
+    //   if (err) {
+    //     console.log(err)
+    //     return reply.code(500).send({ error: err })
+    //   } else {
+    //     console.log(info)
     return reply.send({ message: 'Sent!' })
-      }
-    })
+    //   }
+    // })
   })
 }
 
