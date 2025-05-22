@@ -42,6 +42,7 @@ async function routes(fastify, options) {
     if (!payload) {
       return reply.code(400).send({ error: 'Invalid captcha payload' });
     }
+    //TODO create registry of solved challenges and reject any re submissions
     if (await verifySolution(payload, process.env.HMACKEY)) {
       console.log('VERIFIED ALTCHA.')
     } else {
